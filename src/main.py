@@ -1,7 +1,7 @@
 from MazeEnv import MazeEnv
 
 if __name__ == '__main__':
-    env = MazeEnv(render=False)
+    env = MazeEnv()
 
     for _ in range(10):
         state = env.reset()

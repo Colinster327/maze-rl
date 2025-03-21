@@ -2,16 +2,17 @@ import gymnasium as gym
 import numpy as np
 import pygame
 
-CELL_SIZE = 100  # Size of each cell in the maze
-MAZE_SIZE = 5  # Size of the maze (5x5)
-TOTAL_WIDTH = CELL_SIZE * MAZE_SIZE
 MAZE = [
-    [3, 1, 0, 0, 0],
-    [0, 1, 0, 1, 0],
-    [0, 1, 0, 1, 0],
-    [0, 1, 0, 1, 0],
-    [0, 0, 0, 1, 2]
+    [3, 1, 0, 0, 0, 1],
+    [0, 1, 0, 1, 0, 0],
+    [0, 1, 0, 0, 0, 0],
+    [0, 1, 0, 1, 0, 0],
+    [0, 0, 0, 1, 0, 0],
+    [0, 0, 0, 1, 0, 2]
 ]
+CELL_SIZE = 100
+MAZE_SIZE = len(MAZE)
+TOTAL_WIDTH = CELL_SIZE * MAZE_SIZE
 
 
 class MazeEnv(gym.Env):
