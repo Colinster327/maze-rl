@@ -34,15 +34,16 @@ class MazeEnv(gym.Env):
             pygame.init()
             self.screen = pygame.display.set_mode((TOTAL_WIDTH, TOTAL_WIDTH))
 
-    def reset(self):
+    def reset(self, seed=None, options=None):
         """
         Resets the environment to an initial state.
         """
+        super(MazeEnv, self).reset(seed=seed, options=options)
         self.agent_pos = (0, 0)
         self.maze = [row[:] for row in MAZE]
         self.step_count = 0
 
-        return np.array(self.maze)
+        return np.array(self.maze), {}
 
     def step(self, action):
         """
