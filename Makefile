@@ -1,4 +1,4 @@
-.PHONY: ppo_train ppo_eval qlearn_train qlearn_eval
+.PHONY: ppo_train ppo_eval a2c_train a2c_eval qlearn_train qlearn_eval
 
 ppo_train:
 	-@ulimit -n 4096
@@ -6,6 +6,13 @@ ppo_train:
 
 ppo_eval:
 	python src/ppo_eval.py
+
+a2c_train:
+	-@ulimit -n 4096
+	python src/a2c_train.py
+
+a2c_eval:
+	python src/a2c_eval.py
 
 qlearn_train:
 	python src/qlearning_train.py
